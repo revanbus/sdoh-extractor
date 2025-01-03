@@ -1,6 +1,6 @@
 import sys
-sys.path.insert(1, 'F:/DevOps/Python/Lib/MyUtils/V3_2')
-from myUtils import MyDB
+# sys.path.insert(1, './MyUtils/V3_2')
+# from myUtils import MyDB
 import os
 import sys
 import boto3
