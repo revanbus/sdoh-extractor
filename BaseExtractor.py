@@ -94,7 +94,7 @@ class SDOHBaseExtractor:
         care_management = metadata['care_management']
         chronic_conditions = str(metadata['chronic_conditions'])
         chronic_conditions = chronic_conditions.replace('"', "'")  # ARRAY format must have single quotes
-        error_msg       = metadata['error_msg']  # TODO
+        error_msg       = metadata['error_msg']
 
         # UPSERT query
         upsert_query = f"""
@@ -219,7 +219,7 @@ class SDOHBaseExtractor:
             logger.error(f"Details: {error_msg}")
 
             # Return error JSON
-            response_txt = {"error": "Invalid JSON", "raw_response": "TBD"}  # TODO How to respond to errors?
+            response_txt = {"error": "Invalid JSON", "raw_response": "TBD"}
 
         return response_txt
 

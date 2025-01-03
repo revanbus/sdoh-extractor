@@ -46,7 +46,7 @@ class Client1DataProcessor(SDOHBaseExtractor):
             self.end_where_clause     = f'AND t1.row_seq_no <= {end_num} '
 
     def extract_data(self):
-        "SELECT the data for the prompts from RDS"
+        """SELECT the data for the prompts from RDS"""
 
         # SELECT the rows from the source that aren't already in the target DB,
         # constrained by the WHERE clause
@@ -78,5 +78,6 @@ if __name__ == '__main__':
     parser.add_argument('-tc', '--tgt_col', help='Target column')
     args   = parser.parse_args()
 
-    client_a_extractor = Client1DataProcessor(start_num = args.start_num, end_num= args.end_num, src_table=args.src_table, src_col=args.src_col, tgt_table=args.tgt_table, tgt_col=args.tgt_col)  # TODO :face_with_rolling_eyes:
+    client_a_extractor = Client1DataProcessor(start_num=args.start_num, end_num=args.end_num, src_table=args.src_table,
+                                              src_col=args.src_col, tgt_table=args.tgt_table, tgt_col=args.tgt_col)
     client_a_extractor.run()
